@@ -12,7 +12,7 @@ ln -s ../Ncoin Ncoin
 
 **-. Alternative way is to create git submodule:**
 
-git submodule add https://github.com/Nephatiu\Ncoin Ncoin
+git submodule add https://github.com/Nephatiu/Ncoin Ncoin
 
 Replace URL with git remote repository of your coin.
 
