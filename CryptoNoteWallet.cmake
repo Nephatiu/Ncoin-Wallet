@@ -1,4 +1,4 @@
 
-set(CN_PROJECT_NAME "ncoin")
+set(CN_PROJECT_NAME "Ncoin")
 set(CN_CURRENCY_DISPLAY_NAME "Ncoin")
 set(CN_CURRENCY_TICKER "NCN")
