@@ -1,33 +1,21 @@
-**1. Clone wallet sources**
+**Project: "Ncoin"**
+**Name: "Ncoin"**
+**Ticker: "XFC"**
 
-```
-git clone https://github.com/cryptonotefoundation/cryptonotewallet.git
-```
+**1. Clone Ncoin-Wallet sources**
 
-**2. Modify `CryptoNoteWallet.cmake`**
- 
-```
-set(CN_PROJECT_NAME "furiouscoin")
-set(CN_CURRENCY_DISPLAY_NAME "FuriousCoin")
-set(CN_CURRENCY_TICKER "XFC")
-```
+git clone https://github.com/Nephatiu/Ncoin-Wallet
 
-**3. Set symbolic link to coin sources at the same level as `src`. For example:**
+**2. Set symbolic link to coin sources at the same level as `src`. For example:**
 
-```
-ln -s ../cryptonote cryptonote
-```
+ln -s ../Ncoin Ncoin
 
-Alternative way is to create git submodule:
+**-. Alternative way is to create git submodule:**
 
-```
-git submodule add https://github.com/cryptonotefoundation/cryptonote.git cryptonote
-```
+git submodule add https://github.com/Nephatiu\Ncoin Ncoin
 
 Replace URL with git remote repository of your coin.
 
-**4. Build**
+**3. Build**
 
-```
 mkdir build && cd build && cmake .. && make
-```
