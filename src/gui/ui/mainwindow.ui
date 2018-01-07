@@ -29,7 +29,7 @@
    </size>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Ncoin!</string>
   </property>
   <property name="windowIcon">
    <iconset resource="../../resources.qrc">
@@ -115,7 +115,7 @@
    </property>
    <widget class="QMenu" name="menuFile">
     <property name="title">
-     <string>File</string>
+     <string>Wallet</string>
     </property>
     <addaction name="m_createWalletAction"/>
     <addaction name="m_openWalletAction"/>
@@ -124,7 +124,7 @@
    </widget>
    <widget class="QMenu" name="menuSettings">
     <property name="title">
-     <string>Settings</string>
+     <string>Options</string>
     </property>
     <addaction name="m_encryptWalletAction"/>
     <addaction name="m_changePasswordAction"/>
@@ -135,7 +135,7 @@
    </widget>
    <widget class="QMenu" name="menuHelp">
     <property name="title">
-     <string>Help</string>
+     <string>Stuff</string>
     </property>
     <addaction name="m_aboutCryptonoteAction"/>
     <addaction name="m_aboutQtAction"/>
@@ -232,7 +232,7 @@
     <bool>true</bool>
    </property>
    <property name="text">
-    <string>Exit</string>
+    <string>Quit</string>
    </property>
    <property name="shortcut">
     <string>Ctrl+Q</string>
@@ -258,7 +258,7 @@
     <bool>true</bool>
    </property>
    <property name="text">
-    <string>Create wallet</string>
+    <string>Create a wallet</string>
    </property>
   </action>
   <action name="m_openWalletAction">
@@ -266,7 +266,7 @@
     <bool>true</bool>
    </property>
    <property name="text">
-    <string>Open wallet</string>
+    <string>Open a wallet</string>
    </property>
   </action>
   <action name="m_encryptWalletAction">
@@ -274,7 +274,7 @@
     <bool>true</bool>
    </property>
    <property name="text">
-    <string>Encrypt wallet</string>
+    <string>Encrypt this wallet</string>
    </property>
   </action>
   <action name="m_changePasswordAction">
@@ -282,7 +282,7 @@
     <bool>true</bool>
    </property>
    <property name="text">
-    <string>Change password</string>
+    <string>Change the password</string>
    </property>
    <property name="toolTip">
     <string>Change password</string>
@@ -293,7 +293,7 @@
     <bool>true</bool>
    </property>
    <property name="text">
-    <string>About</string>
+    <string>Info</string>
    </property>
   </action>
   <action name="m_aboutQtAction">
@@ -301,7 +301,7 @@
     <bool>true</bool>
    </property>
    <property name="text">
-    <string>About Qt</string>
+    <string>Qt Info</string>
    </property>
   </action>
   <action name="m_backupWalletAction">
@@ -309,7 +309,7 @@
     <bool>true</bool>
    </property>
    <property name="text">
-    <string>Backup wallet</string>
+    <string>Backup this wallet</string>
    </property>
   </action>
   <action name="m_startOnLoginAction">
@@ -317,7 +317,7 @@
     <bool>true</bool>
    </property>
    <property name="text">
-    <string>Start on system login</string>
+    <string>Start on login</string>
    </property>
   </action>
   <action name="m_minimizeToTrayAction">
@@ -325,7 +325,7 @@
     <bool>true</bool>
    </property>
    <property name="text">
-    <string>Minimize to tray</string>
+    <string>Minimize to system tray</string>
    </property>
   </action>
   <action name="m_closeToTrayAction">
@@ -333,7 +333,7 @@
     <bool>true</bool>
    </property>
    <property name="text">
-    <string>Close to tray</string>
+    <string>Close to system tray</string>
    </property>
   </action>
  </widget>
