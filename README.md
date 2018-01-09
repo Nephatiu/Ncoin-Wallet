@@ -1,6 +1,6 @@
 **Project: "Ncoin"**
 **Name: "Ncoin"**
-**Ticker: "XFC"**
+**Ticker: "N"**
 
 **1. Clone Ncoin-Wallet sources**
 
