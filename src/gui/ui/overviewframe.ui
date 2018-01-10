@@ -91,7 +91,7 @@
       <item row="4" column="0">
        <widget class="QLabel" name="label_6">
         <property name="text">
-         <string>Total:</string>
+         <string>Total Sum:</string>
         </property>
        </widget>
       </item>
@@ -111,7 +111,7 @@
          </font>
         </property>
         <property name="text">
-         <string>Wallet</string>
+         <string>The Numbers:</string>
         </property>
        </widget>
       </item>
@@ -125,7 +125,7 @@
       <item row="1" column="0">
        <widget class="QLabel" name="label_2">
         <property name="text">
-         <string>Balance:</string>
+         <string>Confirmed:</string>
         </property>
        </widget>
       </item>
@@ -227,7 +227,7 @@
            </font>
           </property>
           <property name="text">
-           <string>Recent transactions</string>
+           <string>Last Activity Overview:</string>
           </property>
          </widget>
         </item>

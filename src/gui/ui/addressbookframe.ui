@@ -28,7 +28,7 @@
      <item>
       <widget class="QPushButton" name="m_addAddressButton">
        <property name="text">
-        <string>New address</string>
+        <string>Add an address</string>
        </property>
        <property name="icon">
         <iconset resource="../../resources.qrc">
@@ -42,7 +42,7 @@
         <bool>false</bool>
        </property>
        <property name="text">
-        <string>Delete address</string>
+        <string>Remove selected address</string>
        </property>
        <property name="icon">
         <iconset resource="../../resources.qrc">
@@ -56,7 +56,7 @@
         <bool>false</bool>
        </property>
        <property name="text">
-        <string>Copy address</string>
+        <string>Copy selected address</string>
        </property>
        <property name="icon">
         <iconset resource="../../resources.qrc">

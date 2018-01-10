@@ -31,6 +31,10 @@
   <property name="windowTitle">
    <string>About %1</string>
   </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>../../images/cryptonote.ico</normaloff>../../images/cryptonote.ico</iconset>
+  </property>
   <layout class="QVBoxLayout" name="verticalLayout" stretch="0,0">
    <item>
     <widget class="QLabel" name="m_aboutLabel">
@@ -41,7 +45,7 @@
       </sizepolicy>
      </property>
      <property name="text">
-      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Ncoin Version %1&lt;/p&gt;&lt;p&gt;Ncoin is the next generation anonymous cryptocurrency based on the CryptoNight algorythm.&lt;/p&gt;&lt;p&gt;All Rights Reversed (c) 2017-2018. Ncoin Developers&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;http://ncoin.ggtm.eu/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://ncoin.ggtm.eu/&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;http://www.ggtm.eu/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://www.ggtm.eu/&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:16pt; font-weight:600; color:#730000;&quot;&gt;Ncoin&lt;/span&gt;&lt;span style=&quot; font-size:10pt; color:#7a7a00; vertical-align:sub;&quot;&gt;Version %1&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; color:#750000;&quot;&gt;Ncoin&lt;/span&gt; is the next-generation anonymous cryptocurrency&lt;br/&gt;and runs on the CryptoNight algorythm.&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;All Rights Re&lt;span style=&quot; font-weight:600;&quot;&gt;v&lt;/span&gt;er&lt;span style=&quot; font-weight:600;&quot;&gt;s&lt;/span&gt;ed © 2017-2018 GGTM.eu Underground Services&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;http://ncoin.ggtm.eu/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://ncoin.ggtm.eu/&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
      </property>
      <property name="textFormat">
       <enum>Qt::RichText</enum>

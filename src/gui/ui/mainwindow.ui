@@ -110,7 +110,7 @@
      <x>0</x>
      <y>0</y>
      <width>920</width>
-     <height>27</height>
+     <height>19</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
@@ -179,7 +179,13 @@
      <normaloff>:/icons/overview</normaloff>:/icons/overview</iconset>
    </property>
    <property name="text">
-    <string>Overview</string>
+    <string>Ncoin!</string>
+   </property>
+   <property name="toolTip">
+    <string>Dashboard</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+N</string>
    </property>
   </action>
   <action name="m_sendAction">
@@ -194,7 +200,13 @@
      <normaloff>:/icons/send</normaloff>:/icons/send</iconset>
    </property>
    <property name="text">
-    <string>Send</string>
+    <string>Spend</string>
+   </property>
+   <property name="toolTip">
+    <string>Spend</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
    </property>
   </action>
   <action name="m_receiveAction">
@@ -209,7 +221,13 @@
      <normaloff>:/icons/receive</normaloff>:/icons/receive</iconset>
    </property>
    <property name="text">
-    <string>Receive</string>
+    <string>Request</string>
+   </property>
+   <property name="toolTip">
+    <string>Request</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+R</string>
    </property>
   </action>
   <action name="m_transactionsAction">
@@ -224,7 +242,13 @@
      <normaloff>:/icons/transactions</normaloff>:/icons/transactions</iconset>
    </property>
    <property name="text">
-    <string>Transactions</string>
+    <string>History</string>
+   </property>
+   <property name="toolTip">
+    <string>Transaction History</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+H</string>
    </property>
   </action>
   <action name="m_exitAction">
@@ -232,7 +256,10 @@
     <bool>true</bool>
    </property>
    <property name="text">
-    <string>Quit</string>
+    <string>Quit Ncoin</string>
+   </property>
+   <property name="toolTip">
+    <string>Exit and terminate the Ncoin-Wallet</string>
    </property>
    <property name="shortcut">
     <string>Ctrl+Q</string>
@@ -250,7 +277,13 @@
      <normaloff>:/icons/address-book</normaloff>:/icons/address-book</iconset>
    </property>
    <property name="text">
-    <string>Address Book</string>
+    <string>Contacts</string>
+   </property>
+   <property name="toolTip">
+    <string>Contacts</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+B</string>
    </property>
   </action>
   <action name="m_createWalletAction">
@@ -258,7 +291,10 @@
     <bool>true</bool>
    </property>
    <property name="text">
-    <string>Create a wallet</string>
+    <string>Create a new wallet</string>
+   </property>
+   <property name="toolTip">
+    <string>Generate a new wallet</string>
    </property>
   </action>
   <action name="m_openWalletAction">
@@ -266,7 +302,13 @@
     <bool>true</bool>
    </property>
    <property name="text">
-    <string>Open a wallet</string>
+    <string>Open a wallet backup</string>
+   </property>
+   <property name="iconText">
+    <string>Open a wallet backup</string>
+   </property>
+   <property name="toolTip">
+    <string>Open an existing wallet from file</string>
    </property>
   </action>
   <action name="m_encryptWalletAction">
@@ -274,7 +316,10 @@
     <bool>true</bool>
    </property>
    <property name="text">
-    <string>Encrypt this wallet</string>
+    <string>Protect this wallet</string>
+   </property>
+   <property name="toolTip">
+    <string>Protect your wallet by encryptiong it with a password</string>
    </property>
   </action>
   <action name="m_changePasswordAction">
@@ -293,7 +338,10 @@
     <bool>true</bool>
    </property>
    <property name="text">
-    <string>Info</string>
+    <string>Ncoin Info</string>
+   </property>
+   <property name="toolTip">
+    <string>About Ncoin</string>
    </property>
   </action>
   <action name="m_aboutQtAction">
@@ -303,6 +351,9 @@
    <property name="text">
     <string>Qt Info</string>
    </property>
+   <property name="toolTip">
+    <string>About Qt</string>
+   </property>
   </action>
   <action name="m_backupWalletAction">
    <property name="enabled">
@@ -311,13 +362,16 @@
    <property name="text">
     <string>Backup this wallet</string>
    </property>
+   <property name="toolTip">
+    <string>Backup this wallet to file</string>
+   </property>
   </action>
   <action name="m_startOnLoginAction">
    <property name="checkable">
     <bool>true</bool>
    </property>
    <property name="text">
-    <string>Start on login</string>
+    <string>Run on login</string>
    </property>
   </action>
   <action name="m_minimizeToTrayAction">
@@ -325,7 +379,10 @@
     <bool>true</bool>
    </property>
    <property name="text">
-    <string>Minimize to system tray</string>
+    <string>Minimize to Notification Area</string>
+   </property>
+   <property name="toolTip">
+    <string>Only show in the Notification Area when minimized</string>
    </property>
   </action>
   <action name="m_closeToTrayAction">
@@ -333,7 +390,10 @@
     <bool>true</bool>
    </property>
    <property name="text">
-    <string>Close to system tray</string>
+    <string>Close to Notification Area</string>
+   </property>
+   <property name="toolTip">
+    <string>Minimize to the Notification Area when closing the window</string>
    </property>
   </action>
  </widget>

@@ -7,11 +7,15 @@
     <x>0</x>
     <y>0</y>
     <width>385</width>
-    <height>66</height>
+    <height>72</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Saving data</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>../../images/cryptonote.ico</normaloff>../../images/cryptonote.ico</iconset>
   </property>
   <layout class="QHBoxLayout" name="horizontalLayout" stretch="0,1">
    <item>
@@ -24,8 +28,10 @@
    <item>
     <widget class="QLabel" name="m_label">
      <property name="text">
-      <string>The %1 wallet is packing up the mess it made.
-Please wait...</string>
+      <string>The %1 wallet is cleaning up the mess it made.
+Please let it finish...
+
+Also, do not shutdown your pc during this process!</string>
      </property>
     </widget>
    </item>

@@ -11,7 +11,11 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>New address</string>
+   <string>Add an address</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>../../images/cryptonote.ico</normaloff>../../images/cryptonote.ico</iconset>
   </property>
   <layout class="QGridLayout" name="gridLayout">
    <item row="0" column="0">
@@ -23,7 +27,7 @@
       </sizepolicy>
      </property>
      <property name="text">
-      <string>Label:</string>
+      <string>Name:</string>
      </property>
     </widget>
    </item>
@@ -79,7 +83,7 @@
       <bool>true</bool>
      </property>
      <property name="text">
-      <string>Ok</string>
+      <string>Save</string>
      </property>
      <property name="default">
       <bool>true</bool>
@@ -89,7 +93,7 @@
    <item row="2" column="3">
     <widget class="QPushButton" name="m_cancelButton">
      <property name="text">
-      <string>Cancel</string>
+      <string>Abort</string>
      </property>
     </widget>
    </item>

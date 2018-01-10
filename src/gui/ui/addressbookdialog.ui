@@ -13,6 +13,10 @@
   <property name="windowTitle">
    <string>Select address</string>
   </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>../../images/cryptonote.ico</normaloff>../../images/cryptonote.ico</iconset>
+  </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
     <widget class="QTreeView" name="m_addressBookView"/>
