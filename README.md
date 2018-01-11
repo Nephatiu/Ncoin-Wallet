@@ -14,8 +14,6 @@ ln -s ../Ncoin cryptonote
 
 git submodule add https://github.com/Nephatiu/Ncoin cryptonote
 
-Replace URL with git remote repository of your coin.
-
 **3. Build**
 
 mkdir build && cd build && cmake .. && make
