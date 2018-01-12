@@ -56,7 +56,7 @@ starincl.ggtm.eu:48537
 
 ## To Build:
 
-***__Unix:__***
+__Unix:__
 
 **01. Clone the Ncoin base sources**
 
@@ -80,9 +80,9 @@ git submodule add https://github.com/Nephatiu/Ncoin cryptonote
 
 mkdir build && cd build && cmake .. && make
 
-***__Windows__***
+__Windows__
 
-**0. Yet to be documented**
+**00. Yet to be documented**
 
 ## Precompiled Binaries:
 
