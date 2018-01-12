@@ -1,5 +1,5 @@
-**Project: "Ncoin-qt"**
-**Name: "Ncoin"**
+**Project: "Ncoin-qt"**  
+**Name: "Ncoin"**  
 **Ticker: "N"**
 
 This is the reference code for the [Ncoin](http://ncoin.ggtm.eu) CryptoCurrency...
@@ -20,7 +20,7 @@ This is the reference code for the [Ncoin](http://ncoin.ggtm.eu) CryptoCurrency.
 
 **04. Default ports for P2P and RPC networking** (src/CryptoNoteConfig.h)
 
-P2P: 48537
+P2P: 48537  
 RPC: 48137
 
 **05. Network identifier** (src/P2p/P2pNetworks.h)
@@ -29,8 +29,8 @@ RPC: 48137
 
 **06. Seed nodes** (src/CryptoNoteConfig.h)
 
-servacer.ggtm.eu:48537
-lenonine.ggtm.eu:48537
+servacer.ggtm.eu:48537  
+lenonine.ggtm.eu:48537  
 starincl.ggtm.eu:48537
 
 **07. Minimum transaction fee** (src/CryptoNoteConfig.h)
@@ -65,12 +65,12 @@ git clone https://github.com/Nephatiu/Ncoin-Wallet
 
 **03. Create a symbolic link to the Ncoin sources in the Ncoin-Wallet sources named 'cryptonote':**
 
-cd Ncoin-Wallet
+cd Ncoin-Wallet  
 ln -s ../Ncoin cryptonote
 
 **03. An alternative way is to create a git submodule directly:**
 
-cd Ncoin-Wallet
+cd Ncoin-Wallet  
 git submodule add https://github.com/Nephatiu/Ncoin cryptonote
 
 **04. Build**
