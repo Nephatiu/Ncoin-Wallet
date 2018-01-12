@@ -1,3 +1,6 @@
+Ncoin
+=====
+
 **Project: "Ncoin-qt"**  
 **Name: "Ncoin"**  
 **Ticker: "N"**
@@ -51,7 +54,7 @@ starincl.ggtm.eu:48537
 
 -----
 
-##To Build:##
+## To Build:
 
 ***_Unix:_***
 
@@ -81,10 +84,10 @@ mkdir build && cd build && cmake .. && make
 
 **0. Yet to be documented**
 
-##Precompiled Binaries:##
+## Precompiled Binaries:
 
 **Can be found here:**
 
-https://github.com/Nephatiu/Ncoin-Wallet/tree/master/Binaries
+[Our Binaries directory](https://github.com/Nephatiu/Ncoin-Wallet/tree/master/Binaries)
 
 -----
