@@ -2,6 +2,9 @@
 <ui version="4.0">
  <class>AboutDialog</class>
  <widget class="QDialog" name="AboutDialog">
+  <property name="windowModality">
+   <enum>Qt::NonModal</enum>
+  </property>
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -29,34 +32,70 @@
    </size>
   </property>
   <property name="windowTitle">
-   <string>About %1</string>
+   <string>%1 Info</string>
   </property>
   <property name="windowIcon">
    <iconset>
     <normaloff>../../images/cryptonote.ico</normaloff>../../images/cryptonote.ico</iconset>
   </property>
+  <property name="autoFillBackground">
+   <bool>false</bool>
+  </property>
   <layout class="QVBoxLayout" name="verticalLayout" stretch="0,0">
    <item>
-    <widget class="QLabel" name="m_aboutLabel">
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
-       <horstretch>0</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
-     <property name="text">
-      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:16pt; font-weight:600; color:#730000;&quot;&gt;Ncoin &lt;/span&gt;&lt;span style=&quot; font-size:14pt; color:#7a7a00; vertical-align:sub;&quot;&gt;Version&lt;/span&gt;&lt;span style=&quot; font-size:10pt; color:#7a7a00; vertical-align:sub;&quot;/&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; color:#000000; vertical-align:sub;&quot;&gt;1.0.0.&lt;/span&gt;&lt;span style=&quot; font-size:10pt; font-weight:600; color:#3b3b3b; vertical-align:sub;&quot;&gt;%1&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; color:#750000;&quot;&gt;Ncoin&lt;/span&gt; is the next-generation anonymous cryptocurrency&lt;br/&gt;and runs on the CryptoNight algorythm.&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;All Rights Re&lt;span style=&quot; font-weight:600;&quot;&gt;v&lt;/span&gt;er&lt;span style=&quot; font-weight:600;&quot;&gt;s&lt;/span&gt;ed © 2018-Infinity GGTM.eu Underground Services&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;http://ncoin.ggtm.eu/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://ncoin.ggtm.eu/&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-     </property>
-     <property name="textFormat">
-      <enum>Qt::RichText</enum>
-     </property>
-     <property name="wordWrap">
-      <bool>true</bool>
-     </property>
-     <property name="openExternalLinks">
-      <bool>true</bool>
-     </property>
-    </widget>
+    <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <item>
+      <widget class="QLabel" name="m_aboutLabel">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>375</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:16pt; font-weight:600; color:#730000;&quot;&gt;Ncoin &lt;/span&gt;&lt;span style=&quot; font-size:14pt; color:#7a7a00; vertical-align:sub;&quot;&gt;Version&lt;/span&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; color:#000000; vertical-align:sub;&quot;&gt;1.0.1.&lt;/span&gt;&lt;span style=&quot; font-size:10pt; font-weight:600; color:#3b3b3b; vertical-align:sub;&quot;&gt;%1&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; color:#750000;&quot;&gt;Ncoin&lt;/span&gt; is the next-generation anonymous cryptocurrency&lt;br/&gt;and runs on the CryptoNight algorythm.&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&lt;br/&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;All Rights Re&lt;span style=&quot; font-weight:600;&quot;&gt;v&lt;/span&gt;er&lt;span style=&quot; font-weight:600;&quot;&gt;s&lt;/span&gt;ed © 2018-Infinity GGTM.eu Underground Services&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&lt;a href=&quot;http://ncoin.ggtm.eu/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://ncoin.ggtm.eu/&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+       <property name="textFormat">
+        <enum>Qt::RichText</enum>
+       </property>
+       <property name="wordWrap">
+        <bool>true</bool>
+       </property>
+       <property name="openExternalLinks">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QWidget" name="widget" native="true">
+       <widget class="QLabel" name="label">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>2</y>
+          <width>191</width>
+          <height>181</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/icons/overview&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </widget>
+     </item>
+    </layout>
    </item>
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout">
@@ -84,7 +123,9 @@
    </item>
   </layout>
  </widget>
- <resources/>
+ <resources>
+  <include location="../../resources.qrc"/>
+ </resources>
  <connections>
   <connection>
    <sender>m_closeButton</sender>
@@ -93,8 +134,8 @@
    <slot>accept()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>538</x>
-     <y>285</y>
+     <x>581</x>
+     <y>229</y>
     </hint>
     <hint type="destinationlabel">
      <x>294</x>
