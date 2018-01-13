@@ -34,9 +34,7 @@ endif ()
 include_directories(${Boost_INCLUDE_DIRS})
 link_directories(${Boost_LIBRARY_DIRS})
 
-set(VERSION "1.0.2")
-set(BUILD "102")
-set(EDITION "beta")
+set(VERSION "")
 configure_file("Ncore/src/version.h.in" "version.h")
 configure_file("src/CryptoNoteWalletConfig.h.in" "CryptoNoteWalletConfig.h")
 
