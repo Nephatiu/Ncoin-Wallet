@@ -90,7 +90,7 @@ set(CRYPTONOTE_SOURCES
   Ncore/src/CryptoNoteCore/BlockchainMessages.cpp
   Ncore/src/CryptoNoteCore/BlockIndex.cpp
   Ncore/src/CryptoNoteCore/CoreConfig.cpp
-  Ncore/src/CryptoNoteCore/NcoreBasic.cpp
+  Ncore/src/CryptoNoteCore/CryptoNoteBasic.cpp
   Ncore/src/CryptoNoteCore/CryptoNoteTools.cpp
   Ncore/src/CryptoNoteCore/Currency.cpp
   Ncore/src/CryptoNoteCore/MinerConfig.cpp
