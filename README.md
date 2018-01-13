@@ -70,10 +70,10 @@ To Build:
 
 *git clone https://github.com/Nephatiu/Ncoin-Wallet*
 
-**03. Create a symbolic link to the Ncoin sources in the Ncoin-Wallet sources named 'cryptonote':**
+**03. Create a symbolic link to the Ncoin sources in the Ncoin-Wallet sources named 'Ncore':**
 
 *cd Ncoin-Wallet*  
-*ln -s ../Ncoin cryptonote*
+*ln -s ../Ncoin Ncore*
 
 **03. An alternative way is to create a git submodule directly:**
 
