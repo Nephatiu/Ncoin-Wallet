@@ -78,7 +78,7 @@ To Build:
 **03. An alternative way is to create a git submodule directly:**
 
 *cd Ncoin-Wallet*  
-*git submodule add https://github.com/Nephatiu/Ncoin cryptonote*
+*git submodule add https://github.com/Nephatiu/Ncoin Ncore*
 
 **04. Build**
 
@@ -92,6 +92,6 @@ To Build:
 
 **Can be found here:**
 
-*[Our Binaries directory](https://github.com/Nephatiu/Ncoin-Wallet/tree/master/Binaries)*
+*[Our Releases](https://github.com/Nephatiu/Ncoin-Wallet/releases)*
 
 -----
