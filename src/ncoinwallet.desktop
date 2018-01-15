@@ -1,0 +1,13 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Ncoin
+GenericName=Ncoin Qt Wallet
+Comment=The unofficial and mysterious Ncoin Wallet.
+Exec=Ncoin %U
+Terminal=false
+Type=Application
+Icon=Ncoin
+MimeType=x-scheme-handler/ncoin;
+Categories=Finance;
+Version=1.0.3
+
