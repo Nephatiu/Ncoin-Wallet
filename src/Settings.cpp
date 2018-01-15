@@ -19,8 +19,6 @@
 
 namespace WalletGui {
 
-Q_DECL_CONSTEXPR char OPTION_WALLET_FILE[] = "walletFile";
-Q_DECL_CONSTEXPR char OPTION_ENCRYPTED[] = "encrypted";
 Q_DECL_CONSTEXPR char OPTION_MINING_POOLS[] = "miningPools";
 
 Settings& Settings::instance() {
@@ -44,10 +42,10 @@ void Settings::load() {
   if (cfgFile.open(QIODevice::ReadOnly)) {
     m_settings = QJsonDocument::fromJson(cfgFile.readAll()).object();
     cfgFile.close();
-    if (!m_settings.contains(OPTION_WALLET_FILE)) {
+    if (!m_settings.contains("walletFile")) {
       m_addressBookFile = getDataDir().absoluteFilePath(QCoreApplication::applicationName() + ".addressbook");
     } else {
-      m_addressBookFile = m_settings.value(OPTION_WALLET_FILE).toString();
+      m_addressBookFile = m_settings.value("walletFile").toString();
       m_addressBookFile.replace(m_addressBookFile.lastIndexOf(".wallet"), 7, ".addressbook");
     }
   } else {
@@ -56,7 +54,7 @@ void Settings::load() {
 
   QStringList defaultPoolList;
   //defaultPoolList << "xdn.miner.center:4555" << "duckpool.mooo.com:2222" << "xdn.poolto.be:11010";
-  defaultPoolList << "0.0.0.0:4333";
+  defaultPoolList << "nine.ggtm.eu:48137";
   if (!m_settings.contains(OPTION_MINING_POOLS)) {
     setMiningPoolList(QStringList() << defaultPoolList);
   } else {
@@ -128,7 +126,7 @@ QDir Settings::getDataDir() const {
 }
 
 QString Settings::getWalletFile() const {
-  return m_settings.contains(OPTION_WALLET_FILE) ? m_settings.value(OPTION_ENCRYPTED).toString() :
+  return m_settings.contains("walletFile") ? m_settings.value("encrypted").toString() :
     getDataDir().absoluteFilePath(QCoreApplication::applicationName() + ".wallet");
 }
 
@@ -137,7 +135,7 @@ QString Settings::getAddressBookFile() const {
 }
 
 bool Settings::isEncrypted() const {
-  return m_settings.contains(OPTION_WALLET_FILE) ? m_settings.value(OPTION_ENCRYPTED).toBool() : false;
+  return m_settings.contains("walletFile") ? m_settings.value("encrypted").toBool() : false;
 }
 
 QString Settings::getVersion() const {
@@ -202,19 +200,19 @@ bool Settings::isCloseToTrayEnabled() const {
 
 void Settings::setWalletFile(const QString& _file) {
   if (_file.endsWith(".wallet") || _file.endsWith(".keys")) {
-    m_settings.insert(OPTION_WALLET_FILE, _file);
+    m_settings.insert("walletFile", _file);
   } else {
-    m_settings.insert(OPTION_WALLET_FILE, _file + ".wallet");
+    m_settings.insert("walletFile", _file + ".wallet");
   }
 
   saveSettings();
-  m_addressBookFile = m_settings.value(OPTION_WALLET_FILE).toString();
+  m_addressBookFile = m_settings.value("walletFile").toString();
   m_addressBookFile.replace(m_addressBookFile.lastIndexOf(".wallet"), 7, ".addressbook");
 }
 
 void Settings::setEncrypted(bool _encrypted) {
   if (isEncrypted() != _encrypted) {
-    m_settings.insert(OPTION_ENCRYPTED, _encrypted);
+    m_settings.insert("encrypted", _encrypted);
     saveSettings();
   }
 }

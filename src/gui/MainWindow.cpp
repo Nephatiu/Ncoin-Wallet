@@ -66,7 +66,7 @@ void MainWindow::connectToSignals() {
   connect(&WalletAdapter::instance(), &WalletAdapter::walletInitCompletedSignal, this, &MainWindow::walletOpened);
   connect(&WalletAdapter::instance(), &WalletAdapter::walletCloseCompletedSignal, this, &MainWindow::walletClosed);
   connect(&NodeAdapter::instance(), &NodeAdapter::peerCountUpdatedSignal, this, &MainWindow::peerCountUpdated, Qt::QueuedConnection);
-  connect(m_ui->m_exitAction, &QAction::triggered, qApp, &QApplication::quit);
+  connect(m_ui->m_exitAction, &QAction::triggered, qApp, &QCoreApplication::quit);
 }
 
 void MainWindow::initUi() {
@@ -157,12 +157,12 @@ void MainWindow::closeEvent(QCloseEvent* _event) {
     minimizeToTray(true);
     _event->ignore();
   } else {
-    QApplication::quit();
+    QCoreApplication::quit();
     return;
   }
 #elif defined(Q_OS_LINUX)
   if (!m_isAboutToQuit) {
-    QApplication::quit();
+    QCoreApplication::quit();
     return;
   }
 #endif
@@ -205,7 +205,7 @@ bool MainWindow::event(QEvent* _event) {
 void MainWindow::createWallet() {
   QString filePath = QFileDialog::getSaveFileName(this, tr("New wallet file"),
   #ifdef Q_OS_WIN
-      QApplication::applicationDirPath(),
+      QCoreApplication::applicationDirPath(),
   #else
       QDir::homePath(),
   #endif
@@ -229,7 +229,7 @@ void MainWindow::createWallet() {
 void MainWindow::openWallet() {
   QString filePath = QFileDialog::getOpenFileName(this, tr("Open .wallet/.keys file"),
 #ifdef Q_OS_WIN
-    QApplication::applicationDirPath(),
+    QCoreApplication::applicationDirPath(),
 #else
     QDir::homePath(),
 #endif
@@ -248,7 +248,7 @@ void MainWindow::openWallet() {
 void MainWindow::backupWallet() {
   QString filePath = QFileDialog::getSaveFileName(this, tr("Backup wallet to..."),
   #ifdef Q_OS_WIN
-      QApplication::applicationDirPath(),
+      QCoreApplication::applicationDirPath(),
   #else
       QDir::homePath(),
   #endif
