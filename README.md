@@ -92,6 +92,6 @@ To Build:
 
 **Can be found here:**
 
-*[Our Releases](https://github.com/Nephatiu/Ncoin-Wallet/releases)*
+*[Our Latest Release](https://github.com/Nephatiu/Ncoin-Wallet/releases/latest)*
 
 -----
