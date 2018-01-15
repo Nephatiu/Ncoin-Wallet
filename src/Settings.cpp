@@ -19,9 +19,9 @@
 
 namespace WalletGui {
 
-+Q_DECL_CONSTEXPR char OPTION_WALLET_FILE[] = "walletFile";
-+Q_DECL_CONSTEXPR char OPTION_ENCRYPTED[] = "encrypted";
-+Q_DECL_CONSTEXPR char OPTION_MINING_POOLS[] = "miningPools";
+Q_DECL_CONSTEXPR char OPTION_WALLET_FILE[] = "walletFile";
+Q_DECL_CONSTEXPR char OPTION_ENCRYPTED[] = "encrypted";
+Q_DECL_CONSTEXPR char OPTION_MINING_POOLS[] = "miningPools";
 
 Settings& Settings::instance() {
   static Settings inst;
