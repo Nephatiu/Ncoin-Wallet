@@ -279,12 +279,12 @@ void Settings::setStartOnLoginEnabled(bool _enable) {
 }
 
 void Settings::setMiningPoolList(const QStringList &_miningPoolList) {
-  if (getMiningPoolList() != miningPoolList) {
-    m_settings.insert(OPTION_MINING_POOLS, QJsonArray::fromStringList(_miningPoolList));
-  }
+   if (getMiningPoolList() != _miningPoolList) {
+     m_settings.insert(OPTION_MINING_POOLS, QJsonArray::fromStringList(_miningPoolList));
+   }
 
-  saveSettings();
-}
+   saveSettings();
+ }
 
 #ifdef Q_OS_WIN
 void Settings::setMinimizeToTrayEnabled(bool _enable) {
