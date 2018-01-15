@@ -1,4 +1,6 @@
-// Copyright (c) 2011-2015 The Cryptonote developers
+// Copyright © 2011-2016 The Cryptonote developers
+// Copyright © 2015-2016 The Diginote Developers
+// All Rights Reversed ® 2018-Infinite GGTM.eu Underground Services
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -37,6 +39,7 @@ public:
 
   QString getWalletFile() const;
   QString getAddressBookFile() const;
+  QStringList getMiningPoolList() const;
   bool isEncrypted() const;
   QString getVersion() const;
   bool isStartOnLoginEnabled() const;
@@ -49,6 +52,7 @@ public:
   void setEncrypted(bool _encrypted);
   void setCurrentTheme(const QString& _theme);
   void setStartOnLoginEnabled(bool _enable);
+  void setMiningPoolList(const QStringList& _miningPoolList);
 #ifdef Q_OS_WIN
   void setMinimizeToTrayEnabled(bool _enable);
   void setCloseToTrayEnabled(bool _enable);
