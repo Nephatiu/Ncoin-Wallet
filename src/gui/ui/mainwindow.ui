@@ -232,10 +232,10 @@
      <normaloff>:/icons/receive</normaloff>:/icons/receive</iconset>
    </property>
    <property name="text">
-    <string>Request</string>
+    <string>Account</string>
    </property>
    <property name="toolTip">
-    <string>Request</string>
+    <string>Request N with this address...</string>
    </property>
    <property name="shortcut">
     <string>Ctrl+R</string>
@@ -309,7 +309,10 @@
      <normaloff>:/icons/mining</normaloff>:/icons/mining</iconset>
    </property>
    <property name="text">
-    <string>Mining</string>
+    <string>Nine</string>
+   </property>
+   <property name="toolTip">
+    <string>Nining the night away!</string>
    </property>
   </action>
   <action name="m_createWalletAction">
@@ -455,10 +458,10 @@
    <container>1</container>
   </customwidget>
   <customwidget>
-    <class>WalletGui::MiningFrame</class>
-    <extends>QFrame</extends>
-    <header>gui/MiningFrame.h</header>
-    <container>1</container>
+   <class>WalletGui::MiningFrame</class>
+   <extends>QFrame</extends>
+   <header>gui/MiningFrame.h</header>
+   <container>1</container>
   </customwidget>
  </customwidgets>
  <resources>
