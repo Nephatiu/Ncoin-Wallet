@@ -38,18 +38,18 @@ void Settings::setCommandLineParser(CommandLineParser* _cmdLineParser) {
 }
 
 void Settings::load() {
-  QFile cfgFile(getDataDir().absoluteFilePath(QApplication::applicationName() + ".cfg"));
+  QFile cfgFile(getDataDir().absoluteFilePath(QCoreApplication::applicationName() + ".cfg"));
   if (cfgFile.open(QIODevice::ReadOnly)) {
     m_settings = QJsonDocument::fromJson(cfgFile.readAll()).object();
     cfgFile.close();
     if (!m_settings.contains("walletFile")) {
-      m_addressBookFile = getDataDir().absoluteFilePath(QApplication::applicationName() + ".addressbook");
+      m_addressBookFile = getDataDir().absoluteFilePath(QCoreApplication::applicationName() + ".addressbook");
     } else {
       m_addressBookFile = m_settings.value("walletFile").toString();
       m_addressBookFile.replace(m_addressBookFile.lastIndexOf(".wallet"), 7, ".addressbook");
     }
   } else {
-    m_addressBookFile = getDataDir().absoluteFilePath(QApplication::applicationName() + ".addressbook");
+    m_addressBookFile = getDataDir().absoluteFilePath(QCoreApplication::applicationName() + ".addressbook");
   }
 
   QStringList defaultPoolList;
@@ -126,8 +126,8 @@ QDir Settings::getDataDir() const {
 }
 
 QString Settings::getWalletFile() const {
-  return m_settings.contains("walletFile") ? m_settings.value("encrypted").toString() :
-    getDataDir().absoluteFilePath(QApplication::applicationName() + ".wallet");
+  return m_settings.contains("walletFile") ? m_settings.value("walletFile").toString() :
+    getDataDir().absoluteFilePath(QCoreApplication::applicationName() + ".wallet");
 }
 
 QString Settings::getAddressBookFile() const {
@@ -135,7 +135,7 @@ QString Settings::getAddressBookFile() const {
 }
 
 bool Settings::isEncrypted() const {
-  return m_settings.contains("walletFile") ? m_settings.value("encrypted").toBool() : false;
+  return m_settings.contains("encrypted") ? m_settings.value("encrypted").toBool() : false;
 }
 
 QString Settings::getVersion() const {
@@ -159,7 +159,7 @@ bool Settings::isStartOnLoginEnabled() const {
     return false;
   }
 
-  QString autorunFilePath = autorunDir.absoluteFilePath(QApplication::applicationName() + ".plist");
+  QString autorunFilePath = autorunDir.absoluteFilePath(QCoreApplication::applicationName() + ".plist");
   if (!QFile::exists(autorunFilePath)) {
     return false;
   }
@@ -177,11 +177,11 @@ bool Settings::isStartOnLoginEnabled() const {
     return false;
   }
 
-  QString autorunFilePath = autorunDir.absoluteFilePath(QApplication::applicationName() + ".desktop");
+  QString autorunFilePath = autorunDir.absoluteFilePath(QCoreApplication::applicationName() + ".desktop");
   res = QFile::exists(autorunFilePath);
 #elif defined(Q_OS_WIN)
   QSettings autorunSettings("HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Run", QSettings::NativeFormat);
-  QString keyName = QString("%1Wallet").arg(CurrencyAdapter::instance().getCurrencyDisplayName());
+  QString keyName = QString("%1-qt").arg(CurrencyAdapter::instance().getCurrencyDisplayName());
   res = autorunSettings.contains(keyName) &&
     !QDir::fromNativeSeparators(autorunSettings.value(keyName).toString()).compare(QApplication::applicationFilePath());
 #endif
@@ -199,7 +199,7 @@ bool Settings::isCloseToTrayEnabled() const {
 #endif
 
 void Settings::setWalletFile(const QString& _file) {
-  if (_file.endsWith(".wallet") || _file.endsWith(".keys")) {
+  if (_file.endsWith(".wallet") || _file.endsWith(".keys") || _file.endsWith(".ncoin")) {
     m_settings.insert("walletFile", _file);
   } else {
     m_settings.insert("walletFile", _file + ".wallet");
@@ -227,9 +227,9 @@ void Settings::setStartOnLoginEnabled(bool _enable) {
     return;
   }
 
-  QString autorunFilePath = autorunDir.absoluteFilePath(QApplication::applicationName() + ".plist");
+  QString autorunFilePath = autorunDir.absoluteFilePath(QCoreApplication::applicationName() + ".plist");
   QSettings autorunSettings(autorunFilePath, QSettings::NativeFormat);
-  autorunSettings.setValue("Label", "org." + QApplication::applicationName());
+  autorunSettings.setValue("Label", "org." + QCoreApplication::applicationName());
   autorunSettings.setValue("Program", QApplication::applicationFilePath());
   autorunSettings.setValue("RunAtLoad", _enable);
   autorunSettings.setValue("ProcessType", "InterActive");
@@ -248,7 +248,7 @@ void Settings::setStartOnLoginEnabled(bool _enable) {
     return;
   }
 
-  QString autorunFilePath = autorunDir.absoluteFilePath(QApplication::applicationName() + ".desktop");
+  QString autorunFilePath = autorunDir.absoluteFilePath(QCoreApplication::applicationName() + ".desktop");
   QFile autorunFile(autorunFilePath);
   if (!autorunFile.open(QFile::WriteOnly | QFile::Truncate)) {
     return;
@@ -267,7 +267,7 @@ void Settings::setStartOnLoginEnabled(bool _enable) {
   }
 #elif defined(Q_OS_WIN)
   QSettings autorunSettings("HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Run", QSettings::NativeFormat);
-  QString keyName = QString("%1Wallet").arg(CurrencyAdapter::instance().getCurrencyDisplayName());
+  QString keyName = QString("%1-qt").arg(CurrencyAdapter::instance().getCurrencyDisplayName());
   if (_enable) {
     autorunSettings.setValue(keyName, QDir::toNativeSeparators(QApplication::applicationFilePath()));
   } else {
@@ -301,7 +301,7 @@ void Settings::setCloseToTrayEnabled(bool _enable) {
 #endif
 
 void Settings::saveSettings() const {
-  QFile cfgFile(getDataDir().absoluteFilePath(QApplication::applicationName() + ".cfg"));
+  QFile cfgFile(getDataDir().absoluteFilePath(QCoreApplication::applicationName() + ".cfg"));
   if (cfgFile.open(QIODevice::WriteOnly | QIODevice::Truncate)) {
     QJsonDocument cfg_doc(m_settings);
     cfgFile.write(cfg_doc.toJson());
