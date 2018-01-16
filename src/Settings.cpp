@@ -54,7 +54,7 @@ void Settings::load() {
 
   QStringList defaultPoolList;
   //defaultPoolList << "xdn.miner.center:4555" << "duckpool.mooo.com:2222" << "xdn.poolto.be:11010";
-  defaultPoolList << "nine.ggtm.eu:48137";
+  defaultPoolList << "windvast.ggtm.eu:48137";
   if (!m_settings.contains(OPTION_MINING_POOLS)) {
     setMiningPoolList(QStringList() << defaultPoolList);
   } else {
