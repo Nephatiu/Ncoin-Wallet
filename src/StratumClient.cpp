@@ -1,7 +1,8 @@
-// Copyright (c) 2011-2016 The Cryptonote developers
-// Copyright (c) 2015-2016 XDN developers
-// Distributed under the MIT/X11 software license, see the accompanying
-// file COPYING or http://www.opensource.org/licenses/mit-license.php.
+// Copyright © 2011-2016 The Cryptonote developers
+// Copyright © 2015-2016 XDN developers
+// All Rights Reversed ® 2018-Infinity GGTM.eu Underground Services
+// Distributed under the MIT/X11 software license,
+// see http://www.opensource.org/licenses/mit-license.php.
 
 #include <QDataStream>
 #include <QDebug>
@@ -123,7 +124,7 @@ void StratumClient::timerEvent(QTimerEvent* _event) {
 }
 
 void StratumClient::connectedToHost() {
-  qDebug() << "Connected!!!";
+  qDebug() << "Niner has Contact!!!";
   loginRequest();
 }
 
@@ -160,7 +161,7 @@ void StratumClient::readyRead() {
     if (parseError.error == QJsonParseError::NoError) {
       processData(dataObject);
     } else {
-      qDebug() << "Json parse error: " << parseError.errorString();
+      qDebug() << "Json parsing error: " << parseError.errorString();
     }
   }
 }
@@ -172,7 +173,7 @@ void StratumClient::processData(const QJsonObject& _jsonObject) {
   } else {
     quint64 id = _jsonObject.value(JSON_RPC_TAG_NAME_ID).toString().toULongLong();
     if (!m_activeRequestMap.contains(id)) {
-      qDebug() << "Unknown responce with id = " << id;
+      qDebug() << "Mysterious responce with id = " << id;
       return;
     }
 
@@ -190,7 +191,7 @@ void StratumClient::processNotification(const QJsonObject& _jsonObject) {
 }
 
 void StratumClient::socketError(QTcpSocket::SocketError _error) {
-  qDebug() << "Socket error:" << m_socket->errorString() << ". Reconnecting...";
+  qDebug() << "Socket fail:" << m_socket->errorString() << ". Casually retrying...";
   Q_EMIT socketErrorSignal(m_socket->errorString());
   reconnect();
 }
@@ -218,7 +219,7 @@ void StratumClient::sendRequest(const JsonRpcRequest& _request) {
 void StratumClient::loginRequest() {
   JsonRpcRequest loginRequest;
   loginRequest.method = STRATUM_METHOD_NAME_LOGIN;
-  loginRequest.params[STRATUM_LOGIN_PARAM_NAME_AGENT] = "Miner";
+  loginRequest.params[STRATUM_LOGIN_PARAM_NAME_AGENT] = "Niner";
   loginRequest.params[STRATUM_LOGIN_PARAM_NAME_LOGIN] = m_login;
   loginRequest.params[STRATUM_LOGIN_PARAM_NAME_PASS] = m_password;
   sendRequest(loginRequest);
@@ -226,13 +227,13 @@ void StratumClient::loginRequest() {
 
 void StratumClient::processLoginResponce(const QJsonObject& _responceObject, const JsonRpcRequest& _request) {
   if (_responceObject.contains(JSON_RPC_TAG_NAME_ERROR) && !_responceObject.value(JSON_RPC_TAG_NAME_ERROR).isNull()) {
-    qDebug() << "Login failed. JsonRPC error. Reconnecting...";
+    qDebug() << "Login didn't take! JsonRPC erroring. Not giving up yet...";
     reconnect();
     return;
   }
 
   if (_responceObject.value(JSON_RPC_TAG_NAME_RESULT).toObject().value(STRATUM_LOGIN_PARAM_NAME_STATUS).toString() != "OK") {
-    qDebug() << "Login failed. Invalid status. Reconnecting...";
+    qDebug() << "Login failed. Invalid status Quo. Retrying in disguise...";
     reconnect();
     return;
   }
@@ -248,7 +249,7 @@ void StratumClient::processJobNotification(const QJsonObject& _notificationObjec
 void StratumClient::updateJob(const QVariantMap& _newJobMap) {
   QString jobId = _newJobMap.value(STRATUM_JOB_PARAM_NAME_JOB_ID).toString();
   if (jobId.isEmpty()) {
-    qDebug() << "Job didn't changed";
+    qDebug() << "The job didn't change";
   } else {
     QWriteLocker lock(&m_jobLock);
     QByteArray blob = QByteArray::fromHex(_newJobMap.value(STRATUM_JOB_PARAM_NAME_JOB_BLOB).toByteArray());

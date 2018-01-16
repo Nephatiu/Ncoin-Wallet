@@ -1,7 +1,8 @@
-// Copyright (c) 2011-2016 The Cryptonote developers
-// Copyright (c) 2015-2016 XDN developers
-// Distributed under the MIT/X11 software license, see the accompanying
-// file COPYING or http://www.opensource.org/licenses/mit-license.php.
+// Copyright © 2011-2016 The Cryptonote developers
+// Copyright © 2015-2016 XDN developers
+// All Rights Reversed ® GGTM.eu Underground Services
+// Distributed under the MIT/X11 software license,
+// see http://www.opensource.org/licenses/mit-license.php.
 
 #include "PoolModel.h"
 #include "Settings.h"
@@ -47,7 +48,7 @@ QVariant PoolModel::headerData(int _section, Qt::Orientation _orientation, int _
     return QVariant();
   }
 
-  return tr("Pool URL");
+  return tr("Nine-pool URL");
 }
 
 bool PoolModel::setData(const QModelIndex& _index, const QVariant& _value, int _role) {

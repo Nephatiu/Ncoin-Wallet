@@ -1,7 +1,8 @@
-// Copyright (c) 2011-2016 The Cryptonote developers
-// Copyright (c) 2015-2016 XDN developers
-// Distributed under the MIT/X11 software license, see the accompanying
-// file COPYING or http://www.opensource.org/licenses/mit-license.php.
+// Copyright © 2011-2016 The Cryptonote developers
+// Copyright © 2015-2016 XDN developers
+// All Rights Reversed ® GGTM.eu Underground Services
+// Distributed under the MIT/X11 software license,
+// see http://www.opensource.org/licenses/mit-license.php.
 
 #include <QThread>
 #include <QUrl>
@@ -41,7 +42,7 @@ void MiningFrame::timerEvent(QTimerEvent* _event) {
       return;
     }
 
-    m_ui->m_stateLabel->setText(tr("Mining. Hashrate: %1 H/s").arg(hashRate));
+    m_ui->m_stateLabel->setText(tr("Nining at about %1 H/s").arg(hashRate));
     return;
   }
 
@@ -70,10 +71,10 @@ void MiningFrame::startMining() {
 
   m_miner = new Miner(this, poolUrl.host(), poolUrl.port(), WalletAdapter::instance().getAddress());
   connect(m_miner, &Miner::socketErrorSignal, this, [this](const QString& _errorString) {
-    m_ui->m_stateLabel->setText(tr("Error: %1").arg(_errorString));
+    m_ui->m_stateLabel->setText(tr("Error 48: %1").arg(_errorString));
   });
 
-  m_ui->m_stateLabel->setText(tr("Starting..."));
+  m_ui->m_stateLabel->setText(tr("Reaching out..."));
   m_miner->start(m_ui->m_cpuCombo->currentData().toUInt());
   m_hashRateTimerId = startTimer(HASHRATE_TIMER_INTERVAL);
   m_ui->m_poolCombo->setEnabled(false);
@@ -90,7 +91,7 @@ void MiningFrame::stopMining() {
   m_miner->stop();
   m_miner->deleteLater();
   m_miner = nullptr;
-  m_ui->m_stateLabel->setText(tr("Stopped"));
+  m_ui->m_stateLabel->setText(tr("Bored"));
   m_ui->m_poolCombo->setEnabled(true);
   m_ui->m_cpuCombo->setEnabled(true);
 }
