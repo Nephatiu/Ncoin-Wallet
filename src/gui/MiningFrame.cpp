@@ -91,7 +91,7 @@ void MiningFrame::stopMining() {
   m_miner->stop();
   m_miner->deleteLater();
   m_miner = nullptr;
-  m_ui->m_stateLabel->setText(tr("Distracted by elves again));
+  m_ui->m_stateLabel->setText(tr("Distracted by elves again"));
   m_ui->m_poolCombo->setEnabled(true);
   m_ui->m_cpuCombo->setEnabled(true);
 }
