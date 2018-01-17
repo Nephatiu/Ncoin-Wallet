@@ -22,7 +22,7 @@ if(NOT WIN32)
 	WORKING_DIRECTORY ${CMAKE_SOURCE_DIR})
 
 	file(STRINGS lastbuild.ver NCOIN_VERSION)
-
+	
 	message("This is Ncoin build v" ${NCOIN_VERSION})
 endif()
 
