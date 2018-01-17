@@ -151,6 +151,9 @@ set(CRYPTONOTE_SOURCES
   Ncore/src/HTTP/HttpResponse.cpp
   Ncore/src/Rpc/HttpClient.cpp
   Ncore/src/Rpc/JsonRpc.cpp
+  Ncore/src/Rpc/HttpServer.cpp
+  Ncore/src/Rpc/RpcServer.cpp
+  Ncore/src/Rpc/RpcServerConfig.cpp
   Ncore/src/P2p/NetNode.cpp
   Ncore/src/P2p/LevinProtocol.cpp
   Ncore/src/P2p/NetNodeConfig.cpp
