@@ -20,7 +20,7 @@
 namespace WalletGui {
 
 Q_DECL_CONSTEXPR char OPTION_WALLET_FILE[] = "walletFile";
-Q_DECL_CONSTEXPR char OPTION_MINING_POOLS[] = "ninePools";
+Q_DECL_CONSTEXPR char OPTION_NINING_POOLS[] = "ninePools";
 
 Settings& Settings::instance() {
   static Settings inst;
@@ -56,7 +56,7 @@ void Settings::load() {
   QStringList defaultPoolList;
   //defaultPoolList << "xdn.miner.center:4555" << "duckpool.mooo.com:2222" << "xdn.poolto.be:11010";
   defaultPoolList << "windvast.ggtm.eu:48137";
-  if (!m_settings.contains(OPTION_MINING_POOLS)) {
+  if (!m_settings.contains(OPTION_NINING_POOLS)) {
     setMiningPoolList(QStringList() << defaultPoolList);
   } else {
     QStringList poolList = getMiningPoolList();
@@ -145,8 +145,8 @@ QString Settings::getVersion() const {
 
 QStringList Settings::getMiningPoolList() const {
   QStringList res;
-  if (m_settings.contains(OPTION_MINING_POOLS)) {
-    res << m_settings.value(OPTION_MINING_POOLS).toVariant().toStringList();
+  if (m_settings.contains(OPTION_NINING_POOLS)) {
+    res << m_settings.value(OPTION_NINING_POOLS).toVariant().toStringList();
   }
 
   return res;
@@ -279,7 +279,7 @@ void Settings::setStartOnLoginEnabled(bool _enable) {
 
 void Settings::setMiningPoolList(const QStringList &_miningPoolList) {
    if (getMiningPoolList() != _miningPoolList) {
-     m_settings.insert(OPTION_MINING_POOLS, QJsonArray::fromStringList(_miningPoolList));
+     m_settings.insert(OPTION_NINING_POOLS, QJsonArray::fromStringList(_miningPoolList));
    }
 
    saveSettings();
