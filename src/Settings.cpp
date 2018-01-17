@@ -140,7 +140,8 @@ bool Settings::isEncrypted() const {
 }
 
 QString Settings::getVersion() const {
-  return GIT_REVISION;
+    // return GIT_REVISION;
+	return NCOIN_VERSION;
 }
 
 QStringList Settings::getMiningPoolList() const {

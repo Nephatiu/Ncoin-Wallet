@@ -8,6 +8,15 @@ execute_process(COMMAND git log -1 --pretty=format:%h
 WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
 OUTPUT_VARIABLE GIT_REVISION)
 
+if(WIN32)
+    execute_process(COMMAND cmaketime.cmd
+    WORKING_DIRECTORY ${CMAKE_SOURCE_DIR})
+	
+	file(STRINGS lastbuild.ver NCOIN_VERSION)
+
+	message("This is Ncoin build v" ${NCOIN_VERSION})
+endif(WIN32)
+
 set(CRYPTONOTE_LIB Ncore)
 
 include_directories(${CMAKE_BINARY_DIR}
@@ -40,6 +49,7 @@ configure_file("Ncore/src/version.h.in" "version.h")
 configure_file("src/CryptoNoteWalletConfig.h.in" "CryptoNoteWalletConfig.h")
 
 add_definitions(-DGIT_REVISION=\"${GIT_REVISION}\")
+add_definitions(-DNCOIN_VERSION=\"${NCOIN_VERSION}\")
 
 set(CMAKE_AUTOMOC ON)
 
