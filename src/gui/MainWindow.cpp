@@ -24,6 +24,11 @@
 #include "Settings.h"
 #include "WalletAdapter.h"
 #include "WalletEvents.h"
+#include "RpcServer.h"
+#include "RpcServerConfig.h"
+#include "RpcServer.h"
+#include "HttpServer.h"
+#include "JsonRpc.h"
 
 #include "ui_mainwindow.h"
 
