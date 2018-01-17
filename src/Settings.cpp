@@ -19,7 +19,8 @@
 
 namespace WalletGui {
 
-Q_DECL_CONSTEXPR char OPTION_MINING_POOLS[] = "miningPools";
+Q_DECL_CONSTEXPR char OPTION_WALLET_FILE[] = "walletFile";
+Q_DECL_CONSTEXPR char OPTION_MINING_POOLS[] = "ninePools";
 
 Settings& Settings::instance() {
   static Settings inst;
@@ -42,10 +43,10 @@ void Settings::load() {
   if (cfgFile.open(QIODevice::ReadOnly)) {
     m_settings = QJsonDocument::fromJson(cfgFile.readAll()).object();
     cfgFile.close();
-    if (!m_settings.contains("walletFile")) {
+    if (!m_settings.contains(OPTION_WALLET_FILE)) {
       m_addressBookFile = getDataDir().absoluteFilePath(QCoreApplication::applicationName() + ".addressbook");
     } else {
-      m_addressBookFile = m_settings.value("walletFile").toString();
+      m_addressBookFile = m_settings.value(OPTION_WALLET_FILE).toString();
       m_addressBookFile.replace(m_addressBookFile.lastIndexOf(".wallet"), 7, ".addressbook");
     }
   } else {
@@ -126,7 +127,7 @@ QDir Settings::getDataDir() const {
 }
 
 QString Settings::getWalletFile() const {
-  return m_settings.contains("walletFile") ? m_settings.value("walletFile").toString() :
+  return m_settings.contains(OPTION_WALLET_FILE) ? m_settings.value(OPTION_WALLET_FILE).toString() :
     getDataDir().absoluteFilePath(QCoreApplication::applicationName() + ".wallet");
 }
 
@@ -200,13 +201,13 @@ bool Settings::isCloseToTrayEnabled() const {
 
 void Settings::setWalletFile(const QString& _file) {
   if (_file.endsWith(".wallet") || _file.endsWith(".keys") || _file.endsWith(".ncoin")) {
-    m_settings.insert("walletFile", _file);
+    m_settings.insert(OPTION_WALLET_FILE, _file);
   } else {
-    m_settings.insert("walletFile", _file + ".wallet");
+    m_settings.insert(OPTION_WALLET_FILE, _file + ".wallet");
   }
 
   saveSettings();
-  m_addressBookFile = m_settings.value("walletFile").toString();
+  m_addressBookFile = m_settings.value(OPTION_WALLET_FILE).toString();
   m_addressBookFile.replace(m_addressBookFile.lastIndexOf(".wallet"), 7, ".addressbook");
 }
 
