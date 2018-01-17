@@ -17,6 +17,15 @@ if(WIN32)
 	message("This is Ncoin build v" ${NCOIN_VERSION})
 endif(WIN32)
 
+if(NOT WIN32)
+	execute_process(COMMAND ./cmaketime
+	WORKING_DIRECTORY ${CMAKE_SOURCE_DIR})
+
+	file(STRINGS lastbuild.ver NCOIN_VERSION)
+
+	message("This is Ncoin build v" ${NCOIN_VERSION})
+endif()
+
 set(CRYPTONOTE_LIB Ncore)
 
 include_directories(${CMAKE_BINARY_DIR}
