@@ -35,9 +35,7 @@ General Information (or what makes us us):
 
 **06. Seed nodes** (src/CryptoNoteConfig.h)
 
-*home.ggtm.eu:48537*  
-*lenonine.ggtm.eu:48537*  
-*starincl.ggtm.eu:48537*
+*In Testing Period*
 
 **07. Minimum transaction fee** (src/CryptoNoteConfig.h)
 
